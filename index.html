@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+      sizes="96x96"
+    />
+
+    <title>Flip the coin | devChallenges.io</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game">
+      <h1 class="game__title">Flip the coin</h1>
+      <p class="game__subtitle">Press the coin or the button to flip the coin</p>
+
+      <div class="coin-wrapper">
+        <button class="coin" id="coin" aria-label="Flip the coin">
+          <div class="coin__inner" id="coinInner">
+            <img src="resources/heads.svg" alt="Heads" class="coin__face coin__face--front" />
+            <img src="resources/tails.svg" alt="Tails" class="coin__face coin__face--back" />
+          </div>
+        </button>
+        <img src="resources/shadow.svg" alt="" class="coin-shadow" />
+      </div>
+
+      <p class="game__result" id="result">Head</p>
+
+      <button class="btn-random" id="randomBtn">RANDOM</button>
+    </main>
+
+    <div class="author-info">
+      Coded by <a href="#">Your Name Here</a> | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
+        >devChallenges.io</a
+      >.
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

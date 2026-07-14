@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #414a67;
+  --blue: #1c71b8;
+  --blue-dark: #175d97;
+  --white: #ffffff;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.game {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.game__title {
+  font-family: "Baloo 2", sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--white);
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.game__subtitle {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  max-width: 380px;
+}
+
+.coin-wrapper {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coin {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 145px;
+  height: 145px;
+  perspective: 1000px;
+}
+
+.coin__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1.1s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+.coin__inner.is-flipping {
+  transition: transform 1.1s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+.coin__face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.coin__face--front {
+  transform: rotateY(0deg);
+}
+
+.coin__face--back {
+  transform: rotateY(180deg);
+}
+
+.coin-shadow {
+  margin-top: 16px;
+  width: 100px;
+}
+
+.game__result {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.btn-random {
+  margin-top: 32px;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--blue);
+  color: var(--white);
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.btn-random:hover {
+  background-color: var(--blue-dark);
+}
+
+.btn-random:active {
+  transform: scale(0.97);
+}
+
+.author-info {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.author-info a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 480px) {
+  .game__title {
+    font-size: 36px;
+  }
+
+  .game__subtitle {
+    font-size: 16px;
+  }
+
+  .coin-wrapper {
+    margin-top: 40px;
+  }
+
+  .coin {
+    width: 120px;
+    height: 120px;
+  }
+}
